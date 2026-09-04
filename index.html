@@ -36,3 +36,70 @@
       Uma lista organizada dos filmes que já assisti e dos que ainda quero
       ver, com busca por título ou diretor e filtros por gênero, status e
       avaliação.
+    </p>
+  </section>
+
+  <main id="conteudo-principal" class="layout-principal">
+    <aside class="painel-filtros" aria-labelledby="filtros-titulo">
+      <h2 id="filtros-titulo">Filtros</h2>
+      <form id="form-filtros">
+        <div class="campo">
+          <label for="campo-busca">Buscar por título ou diretor</label>
+          <input
+            type="text"
+            id="campo-busca"
+            name="busca"
+            placeholder="Ex.: Nolan, Duna..."
+            autocomplete="off"
+          />
+        </div>
+
+        <fieldset class="campo">
+          <legend>Gênero</legend>
+          <ul id="lista-generos"></ul>
+        </fieldset>
+
+        <fieldset class="campo">
+          <legend>Status</legend>
+          <div class="filtro-status-item">
+            <input
+              type="radio"
+              id="status-todos"
+              name="status"
+              value="todos"
+              class="filtro-radio"
+              checked
+            />
+            <label for="status-todos">Todos</label>
+          </div>
+          <div class="filtro-status-item">
+            <input
+              type="radio"
+              id="status-assistido"
+              name="status"
+              value="assistido"
+              class="filtro-radio"
+            />
+            <label for="status-assistido">Assistidos</label>
+          </div>
+          <div class="filtro-status-item">
+            <input
+              type="radio"
+              id="status-pendente"
+              name="status"
+              value="quero-assistir"
+              class="filtro-radio"
+            />
+            <label for="status-pendente">Quero assistir</label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="campo-ordenar">Ordenar por</label>
+          <select id="campo-ordenar" name="ordenar">
+            <option value="titulo-asc">Título (A–Z)</option>
+            <option value="ano-desc">Ano (mais recente)</option>
+            <option value="ano-asc">Ano (mais antigo)</option>
+            <option value="nota-desc">Avaliação (maior nota)</option>
+          </select>
+        </div>
