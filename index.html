@@ -103,3 +103,78 @@
             <option value="nota-desc">Avaliação (maior nota)</option>
           </select>
         </div>
+
+        <button type="button" id="botao-limpar-filtros" class="botao">
+          Limpar filtros
+        </button>
+      </form>
+    </aside>
+
+    <section aria-labelledby="catalogo-titulo">
+      <div class="conteudo-catalogo__cabecalho">
+        <h2 id="catalogo-titulo">Filmes</h2>
+        <p id="contador-resultados" aria-live="polite"></p>
+      </div>
+
+      <ul id="grade-filmes" class="grade-filmes" aria-live="polite"></ul>
+
+      <div id="estado-vazio" class="estado-vazio" hidden>
+        <strong>Nenhum filme encontrado</strong>
+        Tente ajustar a busca ou remover alguns filtros.
+      </div>
+    </section>
+  </main>
+
+  <section id="sobre" class="hero" aria-labelledby="sobre-titulo">
+    <h2 id="sobre-titulo">Sobre este catálogo</h2>
+    <p>
+      Este projeto foi desenvolvido como trabalho individual da disciplina
+      SCOM, com o objetivo de aplicar boas práticas de estrutura semântica,
+      responsividade, acessibilidade e desempenho em uma interface web
+      construída com HTML5 e CSS3 puros.
+    </p>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape__conteudo">
+      <span>CineArquivo — projeto acadêmico, SCOM 2026.</span>
+      <a href="#conteudo-principal">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <!-- Modal de detalhes do filme -->
+  <dialog id="modal-detalhe" aria-labelledby="modal-titulo">
+    <button
+      type="button"
+      id="modal-fechar"
+      class="modal-fechar"
+      aria-label="Fechar detalhes do filme"
+    >
+      &times;
+    </button>
+    <div id="modal-conteudo"></div>
+  </dialog>
+
+  <!-- Template reutilizado pelo JavaScript para renderizar cada card -->
+  <template id="template-card-filme">
+    <li>
+      <article class="card-filme">
+        <figure style="margin: 0">
+          <div class="card-filme__poster" aria-hidden="false"></div>
+          <figcaption>
+            <h3 class="card-filme__titulo"></h3>
+            <p class="card-filme__meta"></p>
+            <span class="card-filme__badge"></span>
+            <button type="button" class="botao card-filme__botao">
+              Ver detalhes
+            </button>
+          </figcaption>
+        </figure>
+      </article>
+    </li>
+  </template>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
