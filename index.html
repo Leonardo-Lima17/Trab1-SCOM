@@ -26,6 +26,9 @@
           <li><a href="#sobre">Sobre</a></li>
         </ul>
       </nav>
+      <button type="button" id="botao-adicionar-filme" class="botao botao--primario botao--header">
+        + Adicionar filme
+      </button>
     </div>
   </header>
   <div class="faixa-pelicula" role="presentation"></div>
@@ -164,7 +167,14 @@
           <figcaption>
             <h3 class="card-filme__titulo"></h3>
             <p class="card-filme__meta"></p>
-            <span class="card-filme__badge"></span>
+            <div class="card-filme__badges">
+              <span class="card-filme__badge"></span>
+              <span
+                class="card-filme__badge card-filme__badge-personalizado"
+                hidden
+                >Adicionado por você</span
+              >
+            </div>
             <button type="button" class="botao card-filme__botao">
               Ver detalhes
             </button>
@@ -173,6 +183,99 @@
       </article>
     </li>
   </template>
+
+  <!-- Modal para adicionar um novo filme (salvo no localStorage) -->
+  <dialog id="modal-adicionar" aria-labelledby="modal-adicionar-titulo">
+    <button
+      type="button"
+      id="botao-cancelar-adicionar"
+      class="modal-fechar"
+      aria-label="Fechar formulário de novo filme"
+    >
+      &times;
+    </button>
+    <h2 id="modal-adicionar-titulo">Adicionar filme à minha lista</h2>
+    <p class="modal-aviso">
+      Este filme fica salvo apenas neste navegador (armazenamento local do
+      dispositivo).
+    </p>
+
+    <form id="form-adicionar">
+      <div class="campo">
+        <label for="novo-titulo">Título *</label>
+        <input type="text" id="novo-titulo" name="titulo" required />
+      </div>
+
+      <div class="campo-linha">
+        <div class="campo">
+          <label for="novo-ano">Ano</label>
+          <input type="number" id="novo-ano" name="ano" min="1900" max="2100" />
+        </div>
+        <div class="campo">
+          <label for="novo-duracao">Duração (min)</label>
+          <input type="number" id="novo-duracao" name="duracao" min="1" />
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="novo-diretor">Diretor(a)</label>
+        <input type="text" id="novo-diretor" name="diretor" />
+      </div>
+
+      <fieldset class="campo">
+        <legend>Gêneros (selecione ao menos um)</legend>
+        <ul id="lista-generos-form"></ul>
+      </fieldset>
+
+      <fieldset class="campo">
+        <legend>Status</legend>
+        <div class="filtro-status-item">
+          <input
+            type="radio"
+            id="novo-status-assistido"
+            name="status-novo"
+            value="assistido"
+            class="filtro-radio"
+            checked
+          />
+          <label for="novo-status-assistido">Já assisti</label>
+        </div>
+        <div class="filtro-status-item">
+          <input
+            type="radio"
+            id="novo-status-pendente"
+            name="status-novo"
+            value="quero-assistir"
+            class="filtro-radio"
+          />
+          <label for="novo-status-pendente">Quero assistir</label>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <label for="novo-nota">Minha avaliação (0 a 5)</label>
+        <select id="novo-nota" name="nota">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="novo-sinopse">Sinopse (opcional)</label>
+        <textarea id="novo-sinopse" name="sinopse" rows="3"></textarea>
+      </div>
+
+      <p id="mensagem-adicionar" class="mensagem-form" aria-live="polite"></p>
+
+      <button type="submit" class="botao botao--primario">
+        Salvar filme
+      </button>
+    </form>
+  </dialog>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
