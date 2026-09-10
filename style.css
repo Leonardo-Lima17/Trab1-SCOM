@@ -1,0 +1,44 @@
+:root {
+  /* Cores */
+  --cor-fundo: #14161f;
+  --cor-superficie: #1c2030;
+  --cor-superficie-2: #262b3f;
+  --cor-borda: #333952;
+  --cor-texto: #f2efe6;
+  --cor-texto-muted: #a3a8bb;
+  --cor-acento: #e8b64c;      /* dourado "marquise" */
+  --cor-acento-2: #c1443c;    /* vermelho ingresso */
+  --cor-foco: #7fd4ff;
+
+  /* Tipografia */
+  --fonte-display: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --fonte-corpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --fonte-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  /* Espaçamento e forma */
+  --espaco-1: 0.5rem;
+  --espaco-2: 1rem;
+  --espaco-3: 1.5rem;
+  --espaco-4: 2.5rem;
+  --raio: 10px;
+  --raio-pequeno: 6px;
+
+  /* Layout */
+  --largura-max: 1200px;
+  --sombra: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   Reset básico
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
