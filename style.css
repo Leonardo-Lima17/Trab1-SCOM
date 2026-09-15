@@ -190,3 +190,171 @@ a {
   background-position: center;
   border-bottom: 1px solid var(--cor-borda);
 }
+
+/* =========================================================
+   Hero / introdução
+   ========================================================= */
+
+.hero {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-4) var(--espaco-3) var(--espaco-2);
+}
+
+.hero h1 {
+  font-family: var(--fonte-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--espaco-1);
+}
+
+.hero p {
+  color: var(--cor-texto-muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* =========================================================
+   Layout principal (aside + grade)
+   ========================================================= */
+
+.layout-principal {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco-3) var(--espaco-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-3);
+}
+
+@media (min-width: 900px) {
+  .layout-principal {
+    grid-template-columns: 260px 1fr;
+    align-items: start;
+  }
+}
+
+/* ---- Filtros (aside) ---- */
+
+.painel-filtros {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-3);
+  position: static;
+}
+
+@media (min-width: 900px) {
+  .painel-filtros {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.painel-filtros h2 {
+  font-family: var(--fonte-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  margin: 0 0 var(--espaco-2);
+  padding-bottom: var(--espaco-1);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.campo {
+  margin-bottom: var(--espaco-3);
+}
+
+.campo label,
+.campo legend {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--cor-texto-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.campo input[type="text"],
+.campo select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  background: var(--cor-superficie-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  color: var(--cor-texto);
+  font-size: 1rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--espaco-3);
+}
+
+.filtro-genero-item,
+.filtro-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.filtro-genero-item label,
+.filtro-status-item label {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  margin: 0;
+}
+
+#lista-generos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filtro-checkbox,
+.filtro-radio {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--cor-acento);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--raio-pequeno);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie-2);
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  width: 100%;
+}
+
+.botao:hover {
+  background: var(--cor-borda);
+}
+
+.botao:active {
+  transform: scale(0.98);
+}
+
+.botao--primario {
+  background: var(--cor-acento);
+  color: #1a1500;
+  border-color: var(--cor-acento);
+  font-weight: 700;
+}
+
+.botao--primario:hover {
+  background: #f2c565;
+}
