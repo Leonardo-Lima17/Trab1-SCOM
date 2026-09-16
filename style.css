@@ -358,3 +358,255 @@ fieldset {
 .botao--primario:hover {
   background: #f2c565;
 }
+
+/* ---- Conteúdo / grade de filmes ---- */
+
+.conteudo-catalogo__cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+  margin-bottom: var(--espaco-2);
+  flex-wrap: wrap;
+}
+
+.conteudo-catalogo__cabecalho h2 {
+  font-family: var(--fonte-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#contador-resultados {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--cor-texto-muted);
+}
+
+.grade-filmes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaco-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .grade-filmes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .grade-filmes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-filme {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sombra);
+}
+
+.card-filme__poster {
+  --cor-poster: #333952;
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(
+    160deg,
+    var(--cor-poster) 0%,
+    color-mix(in srgb, var(--cor-poster) 55%, black) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+}
+
+.card-filme figcaption {
+  padding: var(--espaco-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-grow: 1;
+}
+
+.card-filme__titulo {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.card-filme__meta {
+  font-size: 0.8rem;
+  color: var(--cor-texto-muted);
+  margin: 0;
+}
+
+.card-filme__badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--fonte-mono);
+}
+
+.card-filme__badge--assistido {
+  background: color-mix(in srgb, var(--cor-acento) 20%, transparent);
+  color: var(--cor-acento);
+  border: 1px solid color-mix(in srgb, var(--cor-acento) 50%, transparent);
+}
+
+.card-filme__badge--pendente {
+  background: color-mix(in srgb, var(--cor-acento-2) 20%, transparent);
+  color: #ff8b80;
+  border: 1px solid color-mix(in srgb, var(--cor-acento-2) 50%, transparent);
+}
+
+.card-filme__botao {
+  margin-top: auto;
+}
+
+.estado-vazio {
+  text-align: center;
+  padding: var(--espaco-4) var(--espaco-2);
+  color: var(--cor-texto-muted);
+  border: 1px dashed var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.estado-vazio strong {
+  display: block;
+  color: var(--cor-texto);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================================
+   Modal de detalhe
+   ========================================================= */
+
+dialog#modal-detalhe {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-3);
+  max-width: 560px;
+  width: 90vw;
+  box-shadow: var(--sombra);
+}
+
+dialog#modal-detalhe::backdrop {
+  background: rgba(10, 10, 15, 0.7);
+}
+
+.modal-fechar {
+  float: right;
+  background: transparent;
+  border: none;
+  color: var(--cor-texto-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+
+#modal-conteudo h2 {
+  font-family: var(--fonte-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.4rem;
+  padding-right: 2rem;
+}
+
+.modal-meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--cor-texto-muted);
+  margin: 0 0 var(--espaco-2);
+}
+
+.modal-generos,
+.modal-sinopse,
+.modal-status {
+  margin: 0 0 var(--espaco-2);
+}
+
+.botao--header {
+  width: auto;
+  white-space: nowrap;
+}
+
+.card-filme__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.card-filme__badge-personalizado {
+  background: color-mix(in srgb, var(--cor-foco) 20%, transparent);
+  color: var(--cor-foco);
+  border: 1px solid color-mix(in srgb, var(--cor-foco) 50%, transparent);
+}
+
+.modal-aviso {
+  font-size: 0.85rem;
+  color: var(--cor-texto-muted);
+  margin: 0 0 var(--espaco-2);
+}
+
+.campo-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-2);
+}
+
+.campo textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  background: var(--cor-superficie-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  color: var(--cor-texto);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.mensagem-form {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  margin: 0 0 var(--espaco-2);
+}
+
+.mensagem-form--erro {
+  color: #ff8b80;
+}
+
+.botao--remover {
+  background: transparent;
+  border: 1px solid var(--cor-acento-2);
+  color: #ff8b80;
+  width: auto;
+}
+
+.botao--remover:hover {
+  background: color-mix(in srgb, var(--cor-acento-2) 20%, transparent);
+}
+
+@media (max-width: 480px) {
+  .campo-linha {
+    grid-template-columns: 1fr;
+  }
+}
