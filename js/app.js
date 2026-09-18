@@ -382,3 +382,58 @@
     aplicarFiltros();
     fecharModalAdicionar();
   }
+
+  // =========================================================
+  // Limpar filtros
+  // =========================================================
+
+  function limparFiltros() {
+    formFiltros.reset();
+    campoBusca.value = "";
+    campoOrdenar.value = "titulo-asc";
+    aplicarFiltros();
+    campoBusca.focus();
+  }
+
+  // =========================================================
+  // Eventos
+  // =========================================================
+
+  formFiltros.addEventListener("change", aplicarFiltros);
+  campoBusca.addEventListener("input", aplicarFiltros);
+  campoOrdenar.addEventListener("change", aplicarFiltros);
+  botaoLimpar.addEventListener("click", limparFiltros);
+
+  modalFechar.addEventListener("click", fecharModal);
+  modal.addEventListener("cancel", (evento) => {
+    evento.preventDefault();
+    fecharModal();
+  });
+  modal.addEventListener("click", (evento) => {
+    if (evento.target === modal) fecharModal();
+  });
+
+  botaoAbrirAdicionar.addEventListener("click", abrirModalAdicionar);
+  botaoCancelarAdicionar.addEventListener("click", fecharModalAdicionar);
+  formAdicionar.addEventListener("submit", tratarEnvioFormAdicionar);
+  modalAdicionar.addEventListener("cancel", (evento) => {
+    evento.preventDefault();
+    fecharModalAdicionar();
+  });
+  modalAdicionar.addEventListener("click", (evento) => {
+    if (evento.target === modalAdicionar) fecharModalAdicionar();
+  });
+
+  // =========================================================
+  // Inicialização
+  // =========================================================
+
+  todosFilmes = [
+    ...CATALOGO_FILMES,
+    ...carregarFilmesSalvos().map((f) => ({ ...f, personalizado: true }))
+  ];
+
+  montarFiltroGeneros();
+  montarGenerosFormAdicionar();
+  aplicarFiltros();
+})();
