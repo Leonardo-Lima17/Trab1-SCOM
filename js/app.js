@@ -238,3 +238,147 @@
       .join("")
       .toUpperCase();
   }
+
+  // =========================================================
+  // Modal de detalhe (+ remoção de filmes personalizados)
+  // =========================================================
+
+  function abrirModal(filme, elementoOrigem) {
+    elementoQueAbriuModal = elementoOrigem;
+
+    const generosTexto = filme.generos
+      .map((g) => NOMES_GENEROS[g] || g)
+      .join(", ");
+
+    modalConteudo.innerHTML = `
+      <h2 id="modal-titulo">${filme.titulo}</h2>
+      <p class="modal-meta">${filme.ano} · ${filme.diretor} · ${filme.duracao} min</p>
+      <p class="modal-generos"><strong>Gêneros:</strong> ${generosTexto}</p>
+      <p class="modal-sinopse">${filme.sinopse}</p>
+      <p class="modal-status">${
+        filme.status === "assistido"
+          ? `Avaliação pessoal: ${"★".repeat(filme.nota)}${"☆".repeat(
+              5 - filme.nota
+            )}`
+          : "Ainda não assistido — está na lista de interesse."
+      }</p>
+      ${
+        filme.personalizado
+          ? `<button type="button" class="botao botao--remover" id="botao-remover-filme">Remover da minha lista</button>`
+          : ""
+      }
+    `;
+
+    if (filme.personalizado) {
+      const botaoRemover = document.getElementById("botao-remover-filme");
+      botaoRemover.addEventListener("click", () => {
+        removerFilmePersonalizado(filme.id);
+        fecharModal();
+      });
+    }
+
+    modal.showModal();
+    modalFechar.focus();
+  }
+
+  function fecharModal() {
+    modal.close();
+    if (elementoQueAbriuModal) {
+      elementoQueAbriuModal.focus();
+    }
+  }
+
+  function removerFilmePersonalizado(id) {
+    todosFilmes = todosFilmes.filter(
+      (f) => !(f.personalizado && f.id === id)
+    );
+    salvarFilmesPersonalizados(obterFilmesPersonalizados());
+    montarFiltroGeneros();
+    aplicarFiltros();
+  }
+
+  // =========================================================
+  // Formulário "Adicionar filme"
+  // =========================================================
+
+  function abrirModalAdicionar() {
+    formAdicionar.reset();
+    mensagemAdicionar.textContent = "";
+    modalAdicionar.showModal();
+    document.getElementById("novo-titulo").focus();
+  }
+
+  function fecharModalAdicionar() {
+    modalAdicionar.close();
+    botaoAbrirAdicionar.focus();
+  }
+
+  function gerarCorAleatoria() {
+    const cores = [
+      "#3c6e91",
+      "#4a5d3a",
+      "#1f2d4d",
+      "#255c5c",
+      "#7a2020",
+      "#8a6a3a",
+      "#5c1f3a",
+      "#3a3a3a",
+      "#5c5c1f",
+      "#5c3a5c",
+      "#3a6e6e",
+      "#8a5c2a"
+    ];
+    return cores[Math.floor(Math.random() * cores.length)];
+  }
+
+  function tratarEnvioFormAdicionar(evento) {
+    evento.preventDefault();
+
+    const titulo = document.getElementById("novo-titulo").value.trim();
+    const ano = parseInt(document.getElementById("novo-ano").value, 10);
+    const diretor = document.getElementById("novo-diretor").value.trim();
+    const duracao =
+      parseInt(document.getElementById("novo-duracao").value, 10) || 0;
+    const nota = parseInt(document.getElementById("novo-nota").value, 10);
+    const status = formAdicionar.querySelector(
+      'input[name="status-novo"]:checked'
+    ).value;
+    const sinopse = document.getElementById("novo-sinopse").value.trim();
+    const generos = Array.from(
+      formAdicionar.querySelectorAll('input[name="genero-novo"]:checked')
+    ).map((el) => el.value);
+
+    if (!titulo) {
+      mensagemAdicionar.textContent = "O título é obrigatório.";
+      mensagemAdicionar.className = "mensagem-form mensagem-form--erro";
+      return;
+    }
+
+    if (generos.length === 0) {
+      mensagemAdicionar.textContent =
+        "Selecione ao menos um gênero para o filme.";
+      mensagemAdicionar.className = "mensagem-form mensagem-form--erro";
+      return;
+    }
+
+    const novoFilme = {
+      id: Date.now(),
+      titulo,
+      ano: ano || new Date().getFullYear(),
+      diretor: diretor || "Não informado",
+      generos,
+      duracao,
+      nota: status === "assistido" ? nota || 0 : 0,
+      status,
+      sinopse: sinopse || "Sem sinopse cadastrada.",
+      corTema: gerarCorAleatoria(),
+      personalizado: true
+    };
+
+    todosFilmes.push(novoFilme);
+    salvarFilmesPersonalizados(obterFilmesPersonalizados());
+
+    montarFiltroGeneros();
+    aplicarFiltros();
+    fecharModalAdicionar();
+  }
