@@ -274,3 +274,61 @@ const CATALOGO_FILMES = [
   { id: 161, titulo: "O Hobbit: Uma Jornada Inesperada", ano: 2012, diretor: "Peter Jackson", generos: ["fantasia", "aventura"], duracao: 169, nota: 0, status: "quero-assistir", sinopse: "Um hobbit pacato é recrutado por um grupo de anões para recuperar um reino tomado por um dragão.", corTema: "#8a6a3a" },
   { id: 162, titulo: "O Hobbit: A Desolação de Smaug", ano: 2013, diretor: "Peter Jackson", generos: ["fantasia", "aventura"], duracao: 161, nota: 0, status: "quero-assistir", sinopse: "O grupo se aproxima da montanha solitária e de seu perigoso guardião alado.", corTema: "#8a6a3a" },
   { id: 163, titulo: "O Hobbit: A Batalha dos Cinco Exércitos", ano: 2014, diretor: "Peter Jackson", generos: ["fantasia", "aventura"], duracao: 144, nota: 0, status: "quero-assistir", sinopse: "A disputa pelo tesouro do reino recuperado desencadeia um conflito entre vários povos da Terra-média.", corTema: "#8a6a3a" },
+
+  // ---- Pixar / Animação ----
+  { id: 164, titulo: "Toy Story", ano: 1995, diretor: "John Lasseter", generos: ["animacao", "aventura"], duracao: 81, nota: 0, status: "assistido", sinopse: "Um cowboy de brinquedo enfrenta a chegada de um novo brinquedo espacial que ameaça seu lugar de favorito.", corTema: "#3a6e6e" },
+  { id: 165, titulo: "Procurando Nemo", ano: 2003, diretor: "Andrew Stanton", generos: ["animacao", "aventura"], duracao: 100, nota: 0, status: "assistido", sinopse: "Um peixe-palhaço superprotetor atravessa o oceano em busca do filho capturado por mergulhadores.", corTema: "#3a6e6e" },
+  { id: 166, titulo: "Wall-E", ano: 2008, diretor: "Andrew Stanton", generos: ["animacao", "ficcao"], duracao: 98, nota: 0, status: "quero-assistir", sinopse: "Um robô solitário encarregado de limpar a Terra abandonada encontra uma nova sonda que muda sua rotina.", corTema: "#1f2d4d" },
+  { id: 167, titulo: "Up: Altas Aventuras", ano: 2009, diretor: "Pete Docter", generos: ["animacao", "aventura"], duracao: 96, nota: 0, status: "assistido", sinopse: "Um viúvo idoso amarra milhares de balões à sua casa para realizar um sonho antigo ao lado da esposa.", corTema: "#3a6e6e" },
+  { id: 168, titulo: "Coco", ano: 2017, diretor: "Lee Unkrich", generos: ["animacao", "fantasia"], duracao: 105, nota: 0, status: "quero-assistir", sinopse: "Um garoto apaixonado por música é transportado para a terra dos mortos em busca de suas origens.", corTema: "#255c5c" },
+  { id: 169, titulo: "Zootopia: Essa Cidade É o Bicho", ano: 2016, diretor: "Byron Howard e Rich Moore", generos: ["animacao", "comedia"], duracao: 108, nota: 0, status: "assistido", sinopse: "Uma coelha policial se une a uma raposa trapaceira para resolver um caso que ameaça a convivência entre espécies.", corTema: "#5c5c1f" },
+  { id: 170, titulo: "Como Treinar o Seu Dragão", ano: 2010, diretor: "Dean DeBlois e Chris Sanders", generos: ["animacao", "aventura"], duracao: 98, nota: 0, status: "assistido", sinopse: "Um jovem viking forma uma amizade improvável com um dragão que deveria caçar.", corTema: "#3a6e6e" },
+  { id: 171, titulo: "Shrek", ano: 2001, diretor: "Andrew Adamson e Vicky Jenson", generos: ["animacao", "comedia"], duracao: 90, nota: 0, status: "assistido", sinopse: "Um ogro solitário aceita resgatar uma princesa para recuperar a paz de seu pântano.", corTema: "#5c5c1f" },
+
+  // ---- Ficção científica e ação clássicos ----
+  { id: 172, titulo: "Matrix", ano: 1999, diretor: "Lana e Lilly Wachowski", generos: ["acao", "ficcao"], duracao: 136, nota: 5, status: "assistido", sinopse: "Um programador descobre que a realidade em que vive é uma simulação controlada por máquinas.", corTema: "#1f2d4d" },
+  { id: 173, titulo: "Matrix Reloaded", ano: 2003, diretor: "Lana e Lilly Wachowski", generos: ["acao", "ficcao"], duracao: 138, nota: 0, status: "quero-assistir", sinopse: "A resistência humana se prepara para um ataque massivo das máquinas à última cidade livre.", corTema: "#1f2d4d" },
+  { id: 174, titulo: "Terminator 2: O Julgamento Final", ano: 1991, diretor: "James Cameron", generos: ["acao", "ficcao"], duracao: 137, nota: 0, status: "quero-assistir", sinopse: "Um robô reprogramado protege um garoto que será fundamental no futuro contra máquinas hostis.", corTema: "#1f2d4d" },
+  { id: 175, titulo: "Alien, o Oitavo Passageiro", ano: 1979, diretor: "Ridley Scott", generos: ["ficcao", "suspense"], duracao: 117, nota: 0, status: "quero-assistir", sinopse: "A tripulação de uma nave de carga é caçada por uma criatura extraterrestre letal a bordo.", corTema: "#5c1f3a" },
+  { id: 176, titulo: "Jurassic Park", ano: 1993, diretor: "Steven Spielberg", generos: ["aventura", "ficcao"], duracao: 127, nota: 4, status: "assistido", sinopse: "Um parque temático com dinossauros clonados sai do controle durante uma visita de especialistas.", corTema: "#8a6a3a" },
+  { id: 177, titulo: "De Volta para o Futuro", ano: 1985, diretor: "Robert Zemeckis", generos: ["ficcao", "comedia"], duracao: 116, nota: 5, status: "assistido", sinopse: "Um adolescente é acidentalmente enviado ao passado e precisa garantir que seus pais se conheçam.", corTema: "#5c5c1f" },
+  { id: 178, titulo: "Mad Max: Estrada da Fúria", ano: 2015, diretor: "George Miller", generos: ["acao", "ficcao"], duracao: 120, nota: 0, status: "quero-assistir", sinopse: "Em um deserto pós-apocalíptico, uma fugitiva e um sobrevivente se unem contra um tirano local.", corTema: "#7a2020" },
+  { id: 179, titulo: "Gladiador", ano: 2000, diretor: "Ridley Scott", generos: ["acao", "drama"], duracao: 155, nota: 5, status: "assistido", sinopse: "Um general romano traído é escravizado e se torna gladiador em busca de vingança contra o novo imperador.", corTema: "#7a2020" },
+  { id: 180, titulo: "O Poderoso Chefão", ano: 1972, diretor: "Francis Ford Coppola", generos: ["crime", "drama"], duracao: 175, nota: 4, status: "assistido", sinopse: "O filho mais novo de uma família mafiosa é gradualmente arrastado para os negócios do pai.", corTema: "#3a3a3a" },
+  { id: 181, titulo: "O Poderoso Chefão II", ano: 1974, diretor: "Francis Ford Coppola", generos: ["crime", "drama"], duracao: 202, nota: 5, status: "assistido", sinopse: "A ascensão do novo chefe da família é intercalada com a história de seu pai décadas antes.", corTema: "#3a3a3a" },
+  { id: 182, titulo: "Os Suspeitos", ano: 1995, diretor: "Bryan Singer", generos: ["crime", "suspense"], duracao: 106, nota: 0, status: "quero-assistir", sinopse: "Um sobrevivente de uma explosão em um cais conta à polícia a história por trás de cinco criminosos reunidos.", corTema: "#3a3a3a" },
+  { id: 183, titulo: "Se7en: Os Sete Crimes Capitais", ano: 1995, diretor: "David Fincher", generos: ["crime", "suspense"], duracao: 127, nota: 5, status: "assistido", sinopse: "Dois detetives investigam uma série de assassinatos inspirados nos sete pecados capitais.", corTema: "#3a3a3a" },
+
+  // ---- Comédias, musicais e outros ----
+  { id: 184, titulo: "De Repente 30", ano: 2004, diretor: "Gary Winick", generos: ["comedia", "romance"], duracao: 97, nota: 0, status: "quero-assistir", sinopse: "Uma adolescente insatisfeita faz um pedido mágico e acorda treze anos no futuro, já adulta.", corTema: "#5c5c1f" },
+  { id: 185, titulo: "Meninas Malvadas", ano: 2004, diretor: "Mark Waters", generos: ["comedia", "drama"], duracao: 97, nota: 0, status: "quero-assistir", sinopse: "Uma garota recém-chegada a uma nova escola se infiltra no grupo mais popular e temido do colégio.", corTema: "#5c3a5c" },
+  { id: 186, titulo: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", generos: ["comedia", "drama"], duracao: 109, nota: 0, status: "quero-assistir", sinopse: "Uma jovem assistente enfrenta as exigências implacáveis da editora-chefe de uma revista de moda.", corTema: "#5c5c1f" },
+  { id: 187, titulo: "La La Land: Cantando Estações", ano: 2016, diretor: "Damien Chazelle", generos: ["musical", "romance"], duracao: 128, nota: 0, status: "quero-assistir", sinopse: "Uma atriz e um pianista de jazz equilibram amor e ambição em Los Angeles.", corTema: "#7a3a2a" },
+  { id: 188, titulo: "Coringa: Delírio a Dois", ano: 2024, diretor: "Todd Phillips", generos: ["drama", "musical"], duracao: 138, nota: 0, status: "quero-assistir", sinopse: "Preso e à espera de julgamento, o protagonista desenvolve uma relação intensa com outra paciente da instituição.", corTema: "#5c1f3a" },
+  { id: 189, titulo: "Barbie", ano: 2023, diretor: "Greta Gerwig", generos: ["comedia", "fantasia"], duracao: 114, nota: 0, status: "quero-assistir", sinopse: "Uma boneca que vive em um mundo perfeito é levada a questionar sua existência ao visitar o mundo real.", corTema: "#5c3a5c" },
+  { id: 190, titulo: "Duna: Parte Dois", ano: 2024, diretor: "Denis Villeneuve", generos: ["ficcao", "aventura"], duracao: 166, nota: 5, status: "assistido", sinopse: "O herdeiro exilado se une aos habitantes do deserto para retomar seu destino e enfrentar seus inimigos.", corTema: "#8a6a3a" },
+  { id: 191, titulo: "Homem-Aranha: Sem Volta Para Casa", ano: 2021, diretor: "Jon Watts", generos: ["acao", "aventura"], duracao: 148, nota: 5, status: "assistido", sinopse: "Um feitiço que dá errado abre portas entre universos e traz consequências inesperadas para o herói.", corTema: "#8a6a3a" },
+  { id: 192, titulo: "Top Gun: Maverick", ano: 2022, diretor: "Joseph Kosinski", generos: ["acao", "drama"], duracao: 131, nota: 0, status: "quero-assistir", sinopse: "Um piloto veterano é convocado para treinar uma nova geração para uma missão quase impossível.", corTema: "#7a2020" },
+  { id: 193, titulo: "John Wick", ano: 2014, diretor: "Chad Stahelski", generos: ["acao", "crime"], duracao: 101, nota: 5, status: "assistido", sinopse: "Um assassino aposentado retorna ao submundo do crime após um ataque à sua casa.", corTema: "#3a3a3a" },
+  { id: 194, titulo: "John Wick 2", ano: 2017, diretor: "Chad Stahelski", generos: ["acao", "crime"], duracao: 122, nota: 5, status: "assistido", sinopse: "Uma dívida de honra do passado obriga o protagonista a voltar à ativa contra sua vontade.", corTema: "#3a3a3a" },
+  { id: 195, titulo: "John Wick 3: Parabellum", ano: 2019, diretor: "Chad Stahelski", generos: ["acao", "crime"], duracao: 131, nota: 5, status: "assistido", sinopse: "Com uma recompensa alta pela sua cabeça, o assassino foge por Nova York enquanto busca aliados.", corTema: "#3a3a3a" },
+  { id: 196, titulo: "Missão Impossível: Protocolo Fantasma", ano: 2011, diretor: "Brad Bird", generos: ["acao", "suspense"], duracao: 133, nota: 0, status: "quero-assistir", sinopse: "Um agente é acusado de um atentado e precisa provar sua inocência sem apoio oficial.", corTema: "#5c1f3a" },
+  { id: 197, titulo: "Velozes e Furiosos 7", ano: 2015, diretor: "James Wan", generos: ["acao", "aventura"], duracao: 137, nota: 4, status: "assistido", sinopse: "Uma equipe de pilotos enfrenta um mercenário em busca de vingança pelo irmão que perderam.", corTema: "#8a6a3a" },
+  { id: 198, titulo: "Rocky", ano: 1976, diretor: "John G. Avildsen", generos: ["drama", "acao"], duracao: 119, nota: 0, status: "quero-assistir", sinopse: "Um boxeador amador recebe a chance de sua vida ao ser escalado para lutar pelo título mundial.", corTema: "#7a2020" },
+  { id: 199, titulo: "A Origem", ano: 2010, diretor: "Christopher Nolan", generos: ["ficcao", "suspense"], duracao: 148, nota: 5, status: "assistido", sinopse: "Um especialista em roubar segredos através de sonhos aceita a missão inversa de plantar uma ideia na mente de alguém.", corTema: "#1f2d4d" }
+];
+
+const NOMES_GENEROS = {
+  ficcao: "Ficção científica",
+  drama: "Drama",
+  suspense: "Suspense",
+  aventura: "Aventura",
+  romance: "Romance",
+  fantasia: "Fantasia",
+  musical: "Musical",
+  historia: "História",
+  animacao: "Animação",
+  comedia: "Comédia",
+  acao: "Ação",
+  crime: "Crime"
+};
